@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:h2:mem:chatbotdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+app:
+  jwt:
+    secret: ChangeThisJWTSecretToSomethingLongAndSecure1234567890
+    expiration-ms: 86400000
+llm:
+  provider: none
+  openai:
+    apiKey: ${OPENAI_API_KEY:}
+    baseUrl: https://api.openai.com/v1/responses
